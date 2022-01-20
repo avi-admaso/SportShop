@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SportShop">
+  <DataContextMoniker Name="/SportShopDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bd29b0d9-4bbf-493b-8687-09e12c93c07b" absoluteBounds="1.375, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SportShopDataContext/Shoe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8be006a-5794-49b6-b519-7de7f56cd83f" absoluteBounds="1.3899999999999997, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
