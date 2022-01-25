@@ -1,0 +1,12 @@
+﻿
+@using SportShop.Models;
+<div>
+    @foreach (Equipment item in Model)
+    {
+        <div>
+            @item.model
+            <img src=@item.photo>
+            @item.quantity
+        </div>
+    }
+</div>

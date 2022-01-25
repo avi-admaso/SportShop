@@ -8,5 +8,30 @@
         <elementListCompartment Id="a8be006a-5794-49b6-b519-7de7f56cd83f" absoluteBounds="1.3899999999999997, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="71ba1c91-d5db-49c3-a929-86081826f38a" absoluteBounds="4.75, 1.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SportShopDataContext/Clothe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fdd8a71e-fae4-4207-9ef3-61d39c21830b" absoluteBounds="4.765, 1.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="924b30cb-76b6-4fe3-98ff-0bb5ec6a3fa7" absoluteBounds="4.5, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/SportShopDataContext/Equipment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb13a5d4-7e12-45a1-a254-752ba7dd4d57" absoluteBounds="4.515, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad67cc92-0bc0-421e-80d2-3caac48b0f3b" absoluteBounds="3.25, 3.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/SportShopDataContext/Team" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7f7663a-d307-4233-8af4-f0afc3f7fc88" absoluteBounds="3.265, 4.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.59375 : 3.625); (4.59375 : 3.0401025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SportShopDataContext/Team/Team_Equipment" />
+      <nodes>
+        <classShapeMoniker Id="ad67cc92-0bc0-421e-80d2-3caac48b0f3b" />
+        <classShapeMoniker Id="924b30cb-76b6-4fe3-98ff-0bb5ec6a3fa7" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

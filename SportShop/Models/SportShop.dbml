@@ -11,4 +11,39 @@
       <Column Name="photo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Clothes" Member="Clothes">
+    <Type Name="Clothe">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clothesType" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="model" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isShort" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isDrifit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="photo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipment" Member="Equipments">
+    <Type Name="Equipment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sportType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="equipmentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inSupplay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="teamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="photo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Team_Equipment" Member="Team" ThisKey="teamId" OtherKey="Id" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Teams" Member="Teams">
+    <Type Name="Team">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="teamName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Team_Equipment" Member="Equipments" ThisKey="Id" OtherKey="teamId" Type="Equipment" />
+    </Type>
+  </Table>
 </Database>
