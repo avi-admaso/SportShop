@@ -1,0 +1,220 @@
+﻿body {
+    /*    background-color: black;*/
+}
+
+
+button {
+    width: 120px;
+    margin-left: 100px;
+    border-radius: 5%;
+    background-color: white;
+    margin-top: 10%;
+    border: none;
+    color: black;
+    font-size: 30px;
+    font-family: 'Medula One', cursive;
+    transition: 1s;
+    text-shadow: 1px 2px grey;
+}
+    button:hover {
+        width: 130px;
+        margin-left: 110px;
+        border-radius: 5%;
+        background-color: black;
+        margin-top: 10%;
+        color: white;
+    }
+
+    .sportCards {
+        margin-top: 3%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        margin-top: 5%;
+        /*    border-style: double;*/
+    }
+
+#sportImgCard {
+    width: 100%;
+    height: 200px;
+        border-radius: 20%;
+    padding-top: 2%;
+}
+
+table {
+    margin-top: 13%;
+}
+
+.sportCard {
+    margin-top: 1%;
+    border-radius: 10%;
+    border-style: double;
+    width: 28%;
+    /*    height: 100%;*/
+    /*    background-size: 100%;*/
+}
+.theText {
+    text-align:center;
+/*    border-radius: 10%;*/
+    /*    width: 10%;*/
+    /*    position: absolute;*/
+/*    background: rgb(58, 62, 63);*/
+/*    color: white;*/
+/*    margin-top: 2%;*/
+    /*    font-family: sans-serif;*/
+    /*    opacity: 5;*/
+    /*    visibility: hidden;*/
+    /*transition: 0.5s;*/
+}
+.imgTable {
+    width: 150px;
+    margin-left: 8%
+}
+/*.theTable {
+    margin-left: 15%;
+    width : 60%;
+    border-style: double;
+    border-color: black
+}*/
+.navLogos {
+    background-color: black;
+    height: 100px;
+}
+
+.aviLogos {
+    width: 400px;
+    height: 100%;
+    margin-left: 20%
+}
+
+.techLogos {
+    width: 15%;
+    height: 100%;
+    margin-right: 2%
+}
+
+.ingiLogos {
+    width: 8%;
+    height: 100%;
+    margin-left: 22%
+}
+
+tr {
+    width: 2%;
+    border-style: double;
+    border-color: black
+}
+
+th {
+    width: 2%;
+    border-style: double;
+    border-color: black
+}
+
+thead {
+    align-items:center;
+    text-align:center;
+    height: 20%;
+    background-color: silver;
+/*    border-style: double;*/
+    border-color: black;
+}
+
+td {
+    align-items:center;
+    text-align: center;
+    color: black;
+    border-style: double;
+    border-color: black
+}
+
+footer {
+    bottom: 0%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    /*    margin-top: 15%;*/
+    text-align: center;
+
+}
+
+    footer .socialMediaContact > a {
+        font-size: 35px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px rgb(0, 0, 0);
+        margin: 0 30px;
+        color: black;
+        opacity: 0.75;
+        transition: 1s;
+    }
+
+        footer .socialMediaContact > a:hover {
+            opacity: 2;
+            color: blue;
+            font-size: 45px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            display: inline-block;
+        }
+
+.footerText {
+    font-size: 200%;
+    color: rgb(0, 0, 0);
+    font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+    margin-left: 20%;
+    color: black;
+    font-size: 80px;
+    margin-top: 12%;
+    font-family: 'Faster One', cursive;
+    text-shadow: 4px 3px gold;
+}
+h3 {
+    font-family: 'Medula One', cursive;
+}
+h4 {
+    font-family: 'Ewert', cursive;
+    color:black;
+
+}
+#homePage {
+    width: 100%;
+    display: flex;
+    margin-left: 17px;
+}
+.homePageDiv{
+    
+    margin-left:27px;
+    height:400px;
+    width:45%;
+    background:silver;
+    border-style:solid;
+    border-block-color:black;
+
+}
+h5 {
+    /*    color:white;*/
+    font-size: 200%;
+    font-family: 'Tourney', cursive;
+    text-align: center;
+    color: black;
+    border-bottom:double
+    
+}
+p {
+    text-align: center;
+    font-size: 150%;
+    font-family: 'Chicle', cursive;
+}

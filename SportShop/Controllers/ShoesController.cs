@@ -12,10 +12,18 @@ namespace SportShop.Controllers
         static string stringConnection = "Data Source=.;Initial Catalog=SportShop;Integrated Security=True;Pooling=False";
         SportShopDataContext dataContext = new SportShopDataContext();
         // GET: Shoes
-        public ActionResult GetAllShows()
+        public ActionResult GetAllShoes(string theButton)
         {
-            
+            switch (theButton)
+            {
+                case "showSales":
+                    return View(dataContext.Shoes.Where(theShoe => theShoe.inSale == true).ToList());
+                case "sort":
+                    return View(dataContext.Shoes.OrderBy(theShoe => theShoe.price).ToList());
+                default:
+                    break;
+            }
             return View(dataContext.Shoes.ToList());
         }
-    }   
+    }
 }

@@ -1,0 +1,25 @@
+﻿@*<link />*@
+@using SportShop.Models;
+
+<div>
+    <button onclick="location.href = '@Url.Action( "ManagerPageEquipments","Manger", new { theButton = "mangerEquipments" })'">MANGER</button>
+    <button onclick="location.href = '@Url.Action( "GetAllEquipments","Equipments", new { theButton = "soccer" })'">SOCCER</button>
+    <button onclick="location.href = '@Url.Action( "GetAllEquipments","Equipments", new { theButton = "basketBall" })'">BASKET BALL</button>
+    <button onclick="location.href = '@Url.Action( "GetAllEquipments","Equipments", new { theButton = "sort" })'">SORT</button>
+    <div class="sportCards">
+        @foreach (Equipment item in Model)
+        {
+            <section class="sportCard">
+                <img id="sportImgCard" src=@item.photo>
+                <h3 class="theText">
+                    Sport Type:  @item.sportType <br />
+                    Price :  @item.price <br />
+                    Company : @item.company
+                </h3>
+            </section>
+
+        }
+    </div>
+
+
+</div>

@@ -1,0 +1,21 @@
+﻿
+@using SportShop.Models;
+<button onclick="location.href = '@Url.Action( "GetAllShoes","Shoes", new { theButton = "showSales" })'">SALES</button>
+<button onclick="location.href = '@Url.Action( "ManagerPageShoes","Manger", new { theButton = "mangerShoes" })'">MANGER</button>
+<button onclick="location.href = '@Url.Action( "GetAllShoes","Shoes", new { theButton = "sort" })'">SORT</button>
+
+
+<div class="sportCards">
+    @foreach (Shoe item in Model)
+    {
+        <section class="sportCard">
+            <img id="sportImgCard" src=@item.photo>
+            <h3 class="theText">
+               MODEL: @item.model <br />
+              TYPE:  @item.shoeType<br />
+              PRICE:  @item.price<br />
+            </h3>
+
+        </section>
+    }
+</div>

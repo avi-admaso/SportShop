@@ -50,12 +50,18 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -134,12 +140,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\api\ClothesController.cs" />
+    <Compile Include="Controllers\api\EquipmentsController.cs" />
+    <Compile Include="Controllers\api\ShoesController.cs" />
     <Compile Include="Controllers\ClothesController.cs" />
-    <Compile Include="Controllers\EquipmentController.cs" />
+    <Compile Include="Controllers\EquipmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MangerController.cs" />
     <Compile Include="Controllers\ShoesController.cs" />
-    <Compile Include="Controllers\ShopController.cs" />
-    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -155,6 +163,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\logos\9convert.com - Retail Store Video Interior Videography_1080p %28online-video-cutter.com%29.mp4" />
+    <Content Include="Content\logos\9convert.com - Retail Store Video Interior Videography_1080p.mp4" />
+    <Content Include="Content\logos\AviLogo.png" />
+    <Content Include="Content\logos\ingiLogo.png" />
+    <Content Include="Content\styleCss.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -194,13 +207,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shoes\GetAllShows.cshtml" />
-    <Content Include="Views\Clothes\GetAllClothes.cshtml" />
-    <Content Include="Views\Equipment\GetAllEquipmentts.cshtml" />
+    <Content Include="Views\Clothes\GetAllShirts.cshtml" />
+    <Content Include="Views\Equipments\GetAllEquipments.cshtml" />
+    <Content Include="Views\Clothes\GetAllPants.cshtml" />
+    <Content Include="Views\Shoes\GetAllShoes.cshtml" />
+    <Content Include="Views\Manger\ManagerPage.cshtml" />
+    <Content Include="Views\Manger\ManagerPageEquipments.cshtml" />
+    <Content Include="Views\Manger\ManagerPageShoes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cloths\" />
     <Folder Include="Views\Shop\" />
     <Folder Include="Views\Teams\" />
   </ItemGroup>

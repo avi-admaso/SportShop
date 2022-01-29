@@ -25,6 +25,13 @@
       <Column Name="photo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Teams" Member="Teams">
+    <Type Name="Team">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="teamName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Team_Equipment" Member="Equipments" ThisKey="Id" OtherKey="teamId" Type="Equipment" />
+    </Type>
+  </Table>
   <Table Name="dbo.Equipment" Member="Equipments">
     <Type Name="Equipment">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -37,13 +44,6 @@
       <Column Name="teamId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="photo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Team_Equipment" Member="Team" ThisKey="teamId" OtherKey="Id" Type="Team" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Teams" Member="Teams">
-    <Type Name="Team">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="teamName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="Team_Equipment" Member="Equipments" ThisKey="Id" OtherKey="teamId" Type="Equipment" />
     </Type>
   </Table>
 </Database>

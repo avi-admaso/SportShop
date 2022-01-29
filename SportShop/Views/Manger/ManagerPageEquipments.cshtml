@@ -1,0 +1,76 @@
+﻿
+@using SportShop.Models;
+
+
+<table class=" table-condensed">
+    <thead>
+        <tr>
+            <th>
+                <h4>
+
+                    Id
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    sportType
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    equipmentName
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    company
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    price
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    quantity
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    inSupplay
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    photo
+                </h4>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Equipment item in Model)
+        {
+        <tr>
+
+
+            <td><h3>@item.Id</h3></td>
+            <td><h3>@item.sportType</h3></td>
+            <td><h3>@item.equipmentName</h3></td>
+            <td><h3>@item.company</h3></td>
+            <td><h3>@item.price</h3></td>
+            <td><h3>@item.quantity</h3></td>
+            <td><h3>@item.inSupplay</h3></td>
+
+            <td><img class="imgTable" src=@item.photo></td>
+
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+
+    </div>
+
+

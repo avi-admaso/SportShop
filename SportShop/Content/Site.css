@@ -22,3 +22,14 @@ select,
 textarea {
     max-width: 280px;
 }
+.nav navbar-nav{
+    width:100%;
+    display:flex;
+/*    justify-content: space-arou*/
+}
+li {
+    color:gold;
+    font-size: 50px;
+    font-family: 'Medula One', cursive;
+    margin-left:90px
+}

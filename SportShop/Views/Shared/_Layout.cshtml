@@ -6,32 +6,77 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/styleCss.css" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Diplomata&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chicle&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: black;">
+        <div class="navLogos">
+            <a href="https://www.tech-career.org/">
+
+                <img class="techLogos" src="https://static.wixstatic.com/media/db36e0_9f977799257f4cdd8353762ce053b6af~mv2.png/v1/fill/w_230,h_96,al_c,q_85,usm_0.66_1.00_0.01/db36e0_9f977799257f4cdd8353762ce053b6af~mv2.webp" />
+            </a>
+
+            <img class="aviLogos" src="~/Content/logos/AviLogo.png" />
+            <img class="ingiLogos" src="~/Content/logos/ingiLogo.png" />
+        </div>
+
+        <div class="container" style="background-color: black">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @*<h2>headessr</h2>*@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Equipments", "GetAllEquipments", "Equipments")</li>
+                    <li>@Html.ActionLink("Shirts", "GetAllShirts", "Clothes")</li>
+                    <li>@Html.ActionLink("Pants", "GetAllPants", "Clothes")</li>
+                    <li>@Html.ActionLink("Shoes", "GetAllShoes", "Shoes")</li>
                 </ul>
             </div>
         </div>
+
     </div>
+
+
     <div class="container body-content">
+
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer >
+            <div class="socialMediaContact">
+                <a href="https://www.facebook.com/avi.admaso"><i class="fa fa-facebook"></i></a>
+                <a href="https://github.com/avi-admaso"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/avi-admaso-a47b13218/"><i class="fa fa-linkedin-square"></i></a>
+            </div>
+            <p style="margin-top: 20px">&copy; @DateTime.Now.Year Avi Admaso</p>
         </footer>
     </div>
 
@@ -40,3 +85,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

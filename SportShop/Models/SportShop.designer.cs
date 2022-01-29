@@ -36,12 +36,12 @@ namespace SportShop.Models
     partial void InsertClothe(Clothe instance);
     partial void UpdateClothe(Clothe instance);
     partial void DeleteClothe(Clothe instance);
-    partial void InsertEquipment(Equipment instance);
-    partial void UpdateEquipment(Equipment instance);
-    partial void DeleteEquipment(Equipment instance);
     partial void InsertTeam(Team instance);
     partial void UpdateTeam(Team instance);
     partial void DeleteTeam(Team instance);
+    partial void InsertEquipment(Equipment instance);
+    partial void UpdateEquipment(Equipment instance);
+    partial void DeleteEquipment(Equipment instance);
     #endregion
 		
 		public SportShopDataContext() : 
@@ -90,19 +90,19 @@ namespace SportShop.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Equipment> Equipments
-		{
-			get
-			{
-				return this.GetTable<Equipment>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Team> Teams
 		{
 			get
 			{
 				return this.GetTable<Team>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Equipment> Equipments
+		{
+			get
+			{
+				return this.GetTable<Equipment>();
 			}
 		}
 	}
@@ -591,6 +591,120 @@ namespace SportShop.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Teams")]
+	public partial class Team : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _teamName;
+		
+		private EntitySet<Equipment> _Equipments;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnteamNameChanging(string value);
+    partial void OnteamNameChanged();
+    #endregion
+		
+		public Team()
+		{
+			this._Equipments = new EntitySet<Equipment>(new Action<Equipment>(this.attach_Equipments), new Action<Equipment>(this.detach_Equipments));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_teamName", DbType="NVarChar(50)")]
+		public string teamName
+		{
+			get
+			{
+				return this._teamName;
+			}
+			set
+			{
+				if ((this._teamName != value))
+				{
+					this.OnteamNameChanging(value);
+					this.SendPropertyChanging();
+					this._teamName = value;
+					this.SendPropertyChanged("teamName");
+					this.OnteamNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_Equipment", Storage="_Equipments", ThisKey="Id", OtherKey="teamId")]
+		public EntitySet<Equipment> Equipments
+		{
+			get
+			{
+				return this._Equipments;
+			}
+			set
+			{
+				this._Equipments.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Equipments(Equipment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Team = this;
+		}
+		
+		private void detach_Equipments(Equipment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Team = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Equipment")]
 	public partial class Equipment : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -883,120 +997,6 @@ namespace SportShop.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Teams")]
-	public partial class Team : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _teamName;
-		
-		private EntitySet<Equipment> _Equipments;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnteamNameChanging(string value);
-    partial void OnteamNameChanged();
-    #endregion
-		
-		public Team()
-		{
-			this._Equipments = new EntitySet<Equipment>(new Action<Equipment>(this.attach_Equipments), new Action<Equipment>(this.detach_Equipments));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_teamName", DbType="NVarChar(50)")]
-		public string teamName
-		{
-			get
-			{
-				return this._teamName;
-			}
-			set
-			{
-				if ((this._teamName != value))
-				{
-					this.OnteamNameChanging(value);
-					this.SendPropertyChanging();
-					this._teamName = value;
-					this.SendPropertyChanged("teamName");
-					this.OnteamNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Team_Equipment", Storage="_Equipments", ThisKey="Id", OtherKey="teamId")]
-		public EntitySet<Equipment> Equipments
-		{
-			get
-			{
-				return this._Equipments;
-			}
-			set
-			{
-				this._Equipments.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Equipments(Equipment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Team = this;
-		}
-		
-		private void detach_Equipments(Equipment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Team = null;
 		}
 	}
 }

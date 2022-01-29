@@ -1,0 +1,83 @@
+﻿
+@using SportShop.Models;
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h4>
+                    Id
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    clothesType
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    gender
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    company
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    model
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    price
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    quantity
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    isShort
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    isDrifit
+                </h4>
+            </th>
+            <th>
+                <h4>
+                    photo
+                </h4>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Clothe item in Model)
+        {
+        <tr>
+            <td><h3>@item.Id</h3></td>
+            <td><h3>@item.clothesType</h3></td>
+            <td><h3>@item.gender</h3></td>
+            <td><h3>@item.company</h3></td>
+            <td><h3>@item.model</h3></td>
+            <td><h3>@item.price</h3></td>
+            <td><h3>@item.quantity</h3></td>
+            <td><h3>@item.isShort</h3></td>
+            <td><h3>@item.isDrifit</h3></td>
+            <td><img class="imgTable" src=@item.photo></td>
+
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+
+    </div>
+
