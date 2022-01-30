@@ -1,6 +1,7 @@
 ﻿using SportShop.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -15,29 +16,117 @@ namespace SportShop.Controllers.api
         SportShopDataContext dataContext = new SportShopDataContext();
         public IHttpActionResult Get()
         {
+            try
+            {
 
-            return Ok(dataContext.Equipments.ToList());
+                List<Equipment> getTheEquipment = dataContext.Equipments.ToList();
+                return Ok(getTheEquipment);
+            }
+            catch (SqlException)
+            {
+                return BadRequest("Error");
+
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error");
+
+            }
         }
 
         // GET: api/Equipments/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            try
+            {
+                List<Equipment> getById = dataContext.Equipments.Where(item => item.Id == id).ToList();
+                return Ok(getById);
+            }
+            catch (SqlException)
+            {
+                return BadRequest("Error");
+
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error");
+
+            }
         }
 
         // POST: api/Equipments
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post([FromBody] Equipment value)
         {
+            try
+            {
+
+
+                dataContext.Equipments.InsertOnSubmit(value);
+                dataContext.SubmitChanges();
+                return Ok("good Job");
+            }
+            catch (SqlException)
+            {
+                return BadRequest("Error");
+
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error");
+
+            }
         }
 
         // PUT: api/Equipments/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put(int id, [FromBody] Equipment value)
         {
+            try
+            {
+                Equipment theEquipments = dataContext.Equipments.First(item => item.Id == id);
+                theEquipments.sportType = value.sportType;
+                theEquipments.equipmentName = value.equipmentName;
+                theEquipments.company = value.company;
+                theEquipments.price = value.price;
+                theEquipments.quantity = value.quantity;
+                theEquipments.inSupplay = value.inSupplay;
+                theEquipments.photo = value.photo;
+                dataContext.SubmitChanges();
+                return Ok("good job");
+            }
+            catch (SqlException)
+            {
+                return BadRequest("Error");
+
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error");
+
+            }
         }
 
         // DELETE: api/Equipments/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+
+            try
+            {
+                Equipment getById = dataContext.Equipments.First(item => item.Id == id);
+                dataContext.Equipments.DeleteOnSubmit(getById);
+                dataContext.SubmitChanges();
+                return Ok("the item delete");
+
+            }
+            catch (SqlException)
+            {
+                return BadRequest("Error");
+
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error");
+
+            }
         }
     }
 }

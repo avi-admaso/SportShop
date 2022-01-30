@@ -1,6 +1,9 @@
 ﻿
 @using SportShop.Models;
-
+<button class="theBtn" onclick="location.href = '@Url.Action( "ManagerPage","Manger", new { theButton = "mangerShirts" })'">SHIRTS MANGER</button>
+<button onclick="location.href = '@Url.Action( "ManagerPage","Manger", new { theButton = "mangerPants" })'">PANTS MANGER</button>
+<button onclick="location.href = '@Url.Action( "ManagerPageEquipments","Manger", new { theButton = "mangerEquipments" })'">EQUIPMENTS MANGER</button>
+<button onclick="location.href = '@Url.Action( "ManagerPageShoes","Manger", new { theButton = "mangerShoes" })'">SHOES MANGER</button>
 
 <table class=" table-condensed">
     <thead>
@@ -51,20 +54,20 @@
     <tbody>
         @foreach (Equipment item in Model)
         {
-        <tr>
+            <tr>
 
 
-            <td><h3>@item.Id</h3></td>
-            <td><h3>@item.sportType</h3></td>
-            <td><h3>@item.equipmentName</h3></td>
-            <td><h3>@item.company</h3></td>
-            <td><h3>@item.price</h3></td>
-            <td><h3>@item.quantity</h3></td>
-            <td><h3>@item.inSupplay</h3></td>
+                <td><h3>@item.Id</h3></td>
+                <td><h3>@item.sportType</h3></td>
+                <td><h3>@item.equipmentName</h3></td>
+                <td><h3>@item.company</h3></td>
+                <td><h3>@item.price</h3></td>
+                <td><h3>@item.quantity</h3></td>
+                <td><h3>@item.inSupplay</h3></td>
 
-            <td><img class="imgTable" src=@item.photo></td>
+                <td><img class="imgTable" src=@item.photo></td>
 
-        </tr>
+            </tr>
         }
 
     </tbody>
